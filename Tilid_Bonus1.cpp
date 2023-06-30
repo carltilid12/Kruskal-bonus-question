@@ -2,21 +2,6 @@
 /* Construct a minimum cost spanning tree for Figure 2 using either Kruskal’s or Prim’s
 algorithm. Show the progress of the construction of the tree. Indicate which edges are added in
 every step.
-Input:
-8 13
-3 7 1 
-1 2 2
-3 4 3
-4 7 5
-2 6 6
-1 6 8
-2 3 10
-6 7 11
-3 6 12
-7 8 15
-4 8 20
-1 5 22
-5 6 25
 */
 
 
@@ -84,25 +69,30 @@ vector<Edge> kruskal(vector<Edge>& edges, int numVertices) {
 }
 
 int main() {
-    int numVertices, numEdges;
-    cout << "Enter the number of vertices and edges (vertice edge - e.g 8 13): ";
-    cin >> numVertices >> numEdges;
+    int numVertices = 8; // Number of vertices in the graph
 
-    vector<Edge> edges(numEdges);
-    cout << "Enter the edges and their weights (src dest weight - e.g 3 7 1):\n";
-    for (int i = 0; i < numEdges; ++i) {
-        cin >> edges[i].src >> edges[i].dest >> edges[i].weight;
-        // Decrease the vertex numbers by 1 to make them 0-based (since they are 1-based in the input)
-        edges[i].src--;
-        edges[i].dest--;
-    }
+    // Given list of edges (src edge weight)
+    vector<Edge> edges = {
+        {3, 7, 1},
+        {1, 2, 2},
+        {3, 4, 3},
+        {4, 7, 5},
+        {2, 6, 6},
+        {1, 6, 8},
+        {2, 3, 10},
+        {6, 7, 11},
+        {3, 6, 12},
+        {7, 8, 15},
+        {4, 8, 20},
+        {1, 5, 22},
+        {5, 6, 25}
+    };
 
     vector<Edge> minimumSpanningTree = kruskal(edges, numVertices);
 
     cout << "The minimum cost spanning tree contains the following edges:\n";
     for (const Edge& edge : minimumSpanningTree) {
-        // Increase the vertex numbers by 1 to make them 1-based again (for output)
-        cout << edge.src + 1 << " -- " << edge.dest + 1 << " (Weight: " << edge.weight << ")\n";
+        cout << edge.src << " -- " << edge.dest << " (Weight: " << edge.weight << ")\n";
     }
 
     return 0;
