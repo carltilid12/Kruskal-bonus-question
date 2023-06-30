@@ -1,3 +1,6 @@
+// Paul Jovenn Sarmiento
+// Carl Christian G. Tilid
+
 #include <iostream>
 #include <vector>
 

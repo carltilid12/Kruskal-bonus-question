@@ -1,4 +1,5 @@
 // Carl Christian G. Tilid
+// Paul Jovenn Sarmiento
 /* Construct a minimum cost spanning tree for Figure 2 using either Kruskal’s or Prim’s
 algorithm. Show the progress of the construction of the tree. Indicate which edges are added in
 every step.
